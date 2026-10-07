@@ -24,6 +24,7 @@ public class BookStoreApplication {
         return args -> {
             Book book = new Book();
             book.setTitle("Twilight");
+            book.setAuthor("Стефані Маєр");
             book.setDescription("Book about vampires");
             book.setIsbn("978-0-316-16017-9");
             book.setCoverImage("Edward and Bella");
