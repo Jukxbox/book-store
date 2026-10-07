@@ -22,14 +22,14 @@ public class BookStoreApplication {
     @Bean
     public CommandLineRunner commandLineRunner() {
         return args -> {
-            Book twilight = new Book();
-            twilight.setTitle("Twilight");
-            twilight.setDescription("Book about vampires");
-            twilight.setIsbn("978-0-316-16017-9");
-            twilight.setCoverImage("Edward and Bella");
-            twilight.setPrice(BigDecimal.valueOf(500));
+            Book book = new Book();
+            book.setTitle("Twilight");
+            book.setDescription("Book about vampires");
+            book.setIsbn("978-0-316-16017-9");
+            book.setCoverImage("Edward and Bella");
+            book.setPrice(BigDecimal.valueOf(500));
 
-            bookService.save(twilight);
+            bookService.save(book);
 
             System.out.println(bookService.getAll());
         };
