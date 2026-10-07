@@ -86,6 +86,7 @@ public class Book {
         return "Book{"
                 + "id= " + id
                 + ", title= " + title
+                + ", author= " + author
                 + ", isbn= " + isbn
                 + ", price= " + price
                 + ", description= " + description
