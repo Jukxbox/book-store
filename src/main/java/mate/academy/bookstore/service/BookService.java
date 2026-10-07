@@ -1,9 +1,7 @@
 package mate.academy.bookstore.service;
 
-import mate.academy.bookstore.model.Book;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
+import mate.academy.bookstore.model.Book;
 
 public interface BookService {
 

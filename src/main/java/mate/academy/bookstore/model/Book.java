@@ -4,9 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Data;
-
 import java.math.BigDecimal;
+import lombok.Data;
 
 @Entity
 @Data
@@ -19,4 +18,8 @@ public class Book {
     private BigDecimal price;
     private String description;
     private String coverImage;
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
