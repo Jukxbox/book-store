@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<checkstyle version="9.3">
-<file name="/Users/user/IdeaProjects/book-store/src/main/java/mate/academy/bookstore/BookStoreApplication.java">
-</file>
-<file name="/Users/user/IdeaProjects/book-store/src/main/resources/application.properties">
-</file>
-<file name="/Users/user/IdeaProjects/book-store/src/test/resources/application.properties">
-</file>
-</checkstyle>
