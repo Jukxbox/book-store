@@ -19,12 +19,17 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     public Book save(Book book) {
         EntityTransaction transaction = null;
-        try (EntityManager entityManager = entityManagerFactory.createEntityManager()) {
-            transaction = entityManager.getTransaction();
-            transaction.begin();
-            entityManager.persist(book);
-            transaction.commit();
-            return book;
+        try {
+            EntityManager entityManager = entityManagerFactory.createEntityManager();
+            try {
+                transaction = entityManager.getTransaction();
+                transaction.begin();
+                entityManager.persist(book);
+                transaction.commit();
+                return book;
+            } finally {
+                entityManager.close();
+            }
         } catch (RuntimeException e) {
             if (transaction != null && transaction.isActive()) {
                 transaction.rollback();
