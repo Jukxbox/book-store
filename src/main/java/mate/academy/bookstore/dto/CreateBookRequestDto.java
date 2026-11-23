@@ -10,16 +10,16 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CreateBookRequestDto {
-    @NotBlank(message = "Назва книги не може бути порожньою")
+    @NotBlank(message = "The book's title cannot be empty")
     private String title;
-    @NotBlank(message = "Автор не може бути порожнім")
+    @NotBlank(message = "An author cannot be empty")
     private String author;
-    @NotBlank(message = "isbn не може бути порожнім")
+    @NotBlank(message = "The isbn cannot be empty")
     private String isbn;
     @NotNull
     @DecimalMin("0.00")
     private BigDecimal price;
-    @NotBlank(message = "опис не може бути порожнім")
+    @NotBlank(message = "The description cannot be empty")
     private String description;
     private String coverImage;
 }
