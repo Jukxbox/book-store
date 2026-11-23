@@ -34,6 +34,14 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
         return new ResponseEntity<>(body, headers, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(EntityNotFoundException.class)
+    protected ResponseEntity<Object> handleEntityNotFound(EntityNotFoundException ex) {
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("time", LocalDateTime.now());
+        body.put("erros", ex.getMessage());
+        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
+    }
+
     private String getErrorMessage(ObjectError e) {
         if (e instanceof FieldError) {
             String field = ((FieldError) e).getField();
@@ -41,13 +49,5 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
             return field + " " + message;
         }
         return e.getDefaultMessage();
-    }
-
-    @ExceptionHandler(EntityNotFoundException.class)
-    protected ResponseEntity<Object> handleEntityNotFound(EntityNotFoundException ex) {
-        Map<String, Object> body = new LinkedHashMap<>();
-        body.put("time", LocalDateTime.now());
-        body.put("erros", ex.getMessage());
-        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
 }

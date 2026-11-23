@@ -19,7 +19,6 @@ public class CreateBookRequestDto {
     @NotNull
     @DecimalMin("0.00")
     private BigDecimal price;
-    @NotBlank(message = "The description cannot be empty")
     private String description;
     private String coverImage;
 }
